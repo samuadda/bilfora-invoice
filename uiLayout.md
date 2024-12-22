@@ -361,3 +361,9 @@ bilfora/
 ## Final Notes
 
 This structure and roadmap are designed to be beginner-friendly and scalable. Start small (Landing Page and Dashboard) and iteratively add features. Let me know if you'd like more details about any part!
+
+
+
+
+## Landing Page inspo 
+- https://www.contiant.com/
