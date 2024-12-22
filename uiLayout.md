@@ -227,40 +227,46 @@ bilfora/
 │   ├── assets/
 │       └── images/
 │           └── (static images for branding and illustrations)
-├── src/
-│   ├── components/
-│   │   ├── Layout/
-│   │   │   ├── Header.js
-│   │   │   ├── Footer.js
-│   │   │   └── Sidebar.js
-│   │   ├── Navbar.js
-│   │   └── (reusable UI components)
-│   ├── pages/
-│   │   ├── index.js  (Landing Page)
-│   │   ├── dashboard/
-│   │   │   ├── index.js  (Main Dashboard)
-│   │   │   ├── invoices.js
-│   │   │   ├── clients.js
-│   │   │   ├── analytics.js
-│   │   │   └── settings.js
-│   │   ├── api/
-│   │   │   └── (API routes for server-side operations, if needed)
-│   ├── styles/
-│   │   ├── globals.css  (Global styles)
-│   │   ├── layout.css  (Layout-specific styles)
-│   │   ├── components.css  (Component-specific styles)
-│   ├── lib/
-│   │   ├── utils.js  (Helper functions)
-│   │   └── api.js  (Client-side API calls)
-│   ├── context/
-│   │   └── AuthContext.js  (Authentication context, if needed)
-│   ├── hooks/
-│   │   └── useInvoices.js  (Custom hooks for specific features)
-│   ├── config/
-│   │   └── constants.js  (Static values like API URLs or default configs)
-│   ├── services/
-│   │   └── invoiceService.js  (Functions to handle API requests for invoices)
+├── app/
+│   ├── layout.js  (Root layout component)
+│   ├── page.js  (Landing Page)
+│   ├── dashboard/
+│   │   ├── layout.js  (Dashboard-specific layout)
+│   │   ├── page.js  (Main Dashboard)
+│   │   ├── invoices/
+│   │   │   └── page.js  (Invoices Page)
+│   │   ├── clients/
+│   │   │   └── page.js  (Clients Page)
+│   │   ├── analytics/
+│   │   │   └── page.js  (Analytics Page)
+│   │   └── settings/
+│   │       └── page.js  (Settings Page)
+│   ├── api/
+│   │   └── (API routes for server-side operations, if needed)
+├── components/
+│   ├── Layout/
+│   │   ├── Header.js
+│   │   ├── Footer.js
+│   │   └── Sidebar.js
+│   ├── Navbar.js
+│   └── (reusable UI components)
+├── styles/
+│   ├── globals.css  (Global styles)
+│   ├── layout.css  (Layout-specific styles)
+│   ├── components.css  (Component-specific styles)
+├── lib/
+│   ├── utils.js  (Helper functions)
+│   └── api.js  (Client-side API calls)
+├── context/
+│   └── AuthContext.js  (Authentication context, if needed)
+├── hooks/
+│   └── useInvoices.js  (Custom hooks for specific features)
+├── config/
+│   └── constants.js  (Static values like API URLs or default configs)
+├── services/
+│   └── invoiceService.js  (Functions to handle API requests for invoices)
 └── package.json
+
 ```
 
 ---
