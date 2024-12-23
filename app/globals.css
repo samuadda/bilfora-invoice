@@ -18,7 +18,8 @@
     }
     /* Small indicator */
         #when-active {
-        @apply bg-secondary w-2 h-2 rounded-full relative right-[-50%]; 
+        @apply bg-secondary w-2 h-2 rounded-full;
+        margin-left: auto;
     }
     .glow {
         box-shadow: 0 0 8px #eb455edc, 0 0 16px #eb455e9c;

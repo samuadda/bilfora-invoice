@@ -1,6 +1,6 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SideBar from "./components/Layout/SideBar";
+import Header from "./components/Layout/Header";
 import { Poppins } from "next/font/google";
 
 
@@ -17,8 +17,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body>
+            <body className="flex">
                 <SideBar />
+                <Header />
                 {children}
             </body>
         </html>

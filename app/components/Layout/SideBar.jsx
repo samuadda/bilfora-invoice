@@ -33,15 +33,10 @@ const SideBar = () => {
             href: "/products",
             icon: <ProductLoadingIcon size={24} className="text-primary" variant={"stroke"} />,
         },
-        {
-            title: "Settings",
-            href: "/settings",
-            icon: <Settings02Icon size={24} className="text-primary" variant={"stroke"} />,
-        },
     ];
 
     return (
-        <div className="min-h-screen w-64 shadow-lg flex flex-col">
+        <div className="min-h-screen w-64 bg-white shadow-lg flex flex-col">
             <div className="p-5">
                 <Link href="/">
                     <h1 id="logo" className="font-moonet text-primary text-6xl">
@@ -53,7 +48,7 @@ const SideBar = () => {
                 <ul>
                     {navItems.map(item => (
                         <li key={item.title} className="flex items-center px-5 py-4 hover:bg-gray-100 transition-colors duration-300">
-                            <Link href={item.href} className={`flex items-center font-regular ${pathname === item.href ? "isActive" : ""}`}>
+                            <Link href={item.href} className={`flex items-center w-full font-regular ${pathname === item.href ? "isActive" : ""}`}>
                                 {/* Conditionally apply 'isActive' class to the icon */}
                                 {React.cloneElement(item.icon, {
                                     className: `${pathname === item.href ? "isActive" : ""} ${item.icon.props.className}`,
