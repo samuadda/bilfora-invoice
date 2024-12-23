@@ -1,66 +1,79 @@
 "use client";
 import React from "react";
-import { LuLayoutDashboard } from "react-icons/lu";
-import { TbInvoice, TbReportSearch } from "react-icons/tb";
-import { LiaHandshakeSolid } from "react-icons/lia";
-import { IoSettingsOutline } from "react-icons/io5";
-import { AiOutlineShopping } from "react-icons/ai";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { DashboardBrowsingIcon, Invoice01Icon, Analytics01Icon, ProductLoadingIcon, Settings02Icon, UserGroupIcon, Logout01Icon } from "hugeicons-react";
 
 const SideBar = () => {
-    const currentDate = new Date();
-    const date = [currentDate.getFullYear(), currentDate.getMonth() + 1, currentDate.getDate()].join("-");
+    const pathname = usePathname();
+
+    const navItems = [
+        {
+            title: "Dashboard",
+            href: "/",
+            icon: <DashboardBrowsingIcon size={24} className="text-primary" variant={"stroke"} />,
+        },
+        {
+            title: "Invoices",
+            href: "/invoices",
+            icon: <Invoice01Icon size={24} className="text-primary" variant={"stroke"} />,
+        },
+        {
+            title: "Customers",
+            href: "/customers",
+            icon: <UserGroupIcon size={24} className="text-primary" variant={"stroke"} />,
+        },
+        {
+            title: "Reports",
+            href: "/reports",
+            icon: <Analytics01Icon size={24} className="text-primary" variant={"stroke"} />,
+        },
+        {
+            title: "Products",
+            href: "/products",
+            icon: <ProductLoadingIcon size={24} className="text-primary" variant={"stroke"} />,
+        },
+        {
+            title: "Settings",
+            href: "/settings",
+            icon: <Settings02Icon size={24} className="text-primary" variant={"stroke"} />,
+        },
+    ];
 
     return (
-        <div className="min-h-screen w-64">
+        <div className="min-h-screen w-64 shadow-lg flex flex-col">
             <div className="p-5">
                 <Link href="/">
-                    <h1 id="logo" className="font-moonet text-praimary text-6xl">
+                    <h1 id="logo" className="font-moonet text-primary text-6xl">
                         Bilfora
                     </h1>
                 </Link>
             </div>
-            <nav className="w-full mt-4 text-praimary">
+            <nav className="w-full mt-4 text-primary flex-1">
                 <ul>
-                    <li className="flex items-center p-5 hover:bg-priBlu">
-                        <LuLayoutDashboard className="text-xl" />
-                        <Link href="/" className="ml-3 font-medium">
-                            Dashboard
-                        </Link>
-                    </li>
-                    <li className="flex items-center p-5 hover:bg-priBlu">
-                        <TbInvoice className="text-xl" />
-                        <Link href="/" className="ml-3 font-medium">
-                            Invoices
-                        </Link>
-                    </li>
-                    <li className="flex items-center p-5 hover:bg-priBlu">
-                        <LiaHandshakeSolid className="text-xl" />
-                        <Link href="/" className="ml-3 font-medium">
-                            Clients
-                        </Link>
-                    </li>
-                    <li className="flex items-center p-5 hover:bg-priBlu">
-                        <TbReportSearch className="text-xl" />
-                        <Link href="/" className="ml-3 font-medium">
-                            Reports
-                        </Link>
-                    </li>
-                    <li className="flex items-center p-5 hover:bg-priBlu">
-                        <AiOutlineShopping className="text-xl" />
-                        <Link href="/" className="ml-3 font-medium">
-                            Shopping
-                        </Link>
-                    </li>
-                    <li className="flex items-center p-5 hover:bg-priBlu">
-                        <IoSettingsOutline className="text-xl" />
-                        <Link href="/" className="ml-3 font-medium">
-                            Settings
-                        </Link>
-                    </li>
+                    {navItems.map(item => (
+                        <li key={item.title} className="flex items-center px-5 py-4 hover:bg-gray-100 transition-colors duration-300">
+                            <Link href={item.href} className={`flex items-center font-regular ${pathname === item.href ? "isActive" : ""}`}>
+                                {/* Conditionally apply 'isActive' class to the icon */}
+                                {React.cloneElement(item.icon, {
+                                    className: `${pathname === item.href ? "isActive" : ""} ${item.icon.props.className}`,
+                                })}{" "}
+                                <span className="ml-3">{item.title}</span>
+                                {/* Small indicator  */}
+                                {pathname === item.href && <span id="when-active" className="glow" />}
+                            </Link>
+                        </li>
+                    ))}
                 </ul>
             </nav>
-            <div className="p-5 absolute bottom-0 text-sm text-gray-400 font-poppins">{date}</div>
+            <div className="mt-auto flex items-center justify-evenly py-5 border-t">
+                <Link href="/LogIn" className="rounded-full p-3 hover:bg-gray-100  transition-colors duration-300">
+                    <Logout01Icon size={24} className="text-primary hover:text-secondary" variant={"stroke"} />
+                </Link>
+                <Link href="/settings" className="rounded-full  p-3 hover:bg-gray-100 transition-colors duration-300">
+                    <Settings02Icon size={24} className="text-primary" variant={"stroke"} />
+                </Link>
+            </div>
         </div>
     );
 };

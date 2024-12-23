@@ -4,8 +4,23 @@
 
 /* the logo font 'rosca' */
 @font-face {
-  font-family: 'moonet'; /* Name used in Tailwind config */
-  src: url('/fonts/moonet.otf') format('opentype'); /* Path to the font file */
-  font-weight: normal;
-  font-style: normal;
+    font-family: "moonet"; /* Name used in Tailwind config */
+    src: url("/fonts/moonet.otf") format("opentype"); /* Path to the font file */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+/* active state */
+@layer utilities {
+    .isActive {
+        @apply text-secondary font-semibold;
+    }
+    /* Small indicator */
+        #when-active {
+        @apply bg-secondary w-2 h-2 rounded-full relative right-[-50%]; 
+    }
+    .glow {
+        box-shadow: 0 0 8px #eb455edc, 0 0 16px #eb455e9c;
+    }
 }
