@@ -10,7 +10,7 @@ const SideBar = () => {
     const navItems = [
         {
             title: "Dashboard",
-            href: "/",
+            href: "/dashboard",
             icon: <DashboardBrowsingIcon size={24} className="text-primary" variant={"stroke"} />,
         },
         {
@@ -36,7 +36,7 @@ const SideBar = () => {
     ];
 
     return (
-        <div className="min-h-screen w-64 bg-white shadow-lg flex flex-col">
+        <div className="min-h-screen w-64 bg-white flex flex-col border-r border-gray-200 ">
             <div className="p-5">
                 <Link href="/">
                     <h1 id="logo" className="font-moonet text-primary text-6xl">
@@ -62,7 +62,7 @@ const SideBar = () => {
                 </ul>
             </nav>
             <div className="mt-auto flex items-center justify-evenly py-5 border-t">
-                <Link href="/LogIn" className="rounded-full p-3 hover:bg-gray-100  transition-colors duration-300">
+                <Link href="/LogOut" className="rounded-full p-3 hover:bg-gray-100  transition-colors duration-300">
                     <Logout01Icon size={24} className="text-primary hover:text-secondary" variant={"stroke"} />
                 </Link>
                 <Link href="/settings" className="rounded-full  p-3 hover:bg-gray-100 transition-colors duration-300">
