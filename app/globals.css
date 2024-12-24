@@ -10,14 +10,13 @@
     font-style: normal;
 }
 
-
 /* active state */
 @layer utilities {
     .isActive {
         @apply text-secondary font-semibold;
     }
     /* Small indicator */
-        #when-active {
+    #when-active {
         @apply bg-secondary w-2 h-2 rounded-full;
         margin-left: auto;
     }
@@ -54,4 +53,21 @@
         animation: spinOut 0.5s ease-in;
     }
 }
+
+/* actionBtn component */
+@layer components {
+    .actionBtn {
+        @apply inline-block rounded-lg border-none bg-blue-600 text-white font-medium text-center text-sm shadow-lg p-3 transition-transform duration-300 ease-in-out cursor-pointer;
+    }
+    .actionBtn:hover {
+        transform: scale(1.03);
+    }
+    .actionBtn:active {
+        transform: scale(0.95);
+    }
+    .actionBtn:disabled {
+        @apply opacity-50 cursor-not-allowed;
+    }
+}
+
 
