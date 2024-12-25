@@ -1,8 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import { Moon02Icon, Sun02Icon } from "hugeicons-react";
 
-const Toggle = () => {
+const Toggle = ({initIcon, secIcon}) => {
     const [isChecked, setIsChecked] = useState(false);
 
     const handleToggle = () => {
@@ -15,11 +14,11 @@ const Toggle = () => {
                 <input id="switch" type="checkbox" className="hidden" checked={isChecked} onChange={handleToggle} />
                 {/* Sun Icon */}
                 <div className={`absolute transition-transform duration-500 ${isChecked ? "scale-0 spin-out" : "scale-100 spin-in"}`}>
-                    <Sun02Icon size={24} className="text-primary" variant={"stroke"} />
+                    {initIcon}
                 </div>
                 {/* Moon Icon */}
                 <div className={`absolute transition-transform duration-500 ${isChecked ? "scale-100 spin-in" : "scale-0 spin-out"}`}>
-                    <Moon02Icon size={24} className="text-primary" variant={"stroke"} />
+                    {secIcon}
                 </div>
             </label>
         </div>

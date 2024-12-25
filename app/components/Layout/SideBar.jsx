@@ -66,7 +66,7 @@ const SideBar = () => {
                     <Logout01Icon size={24} className="text-primary hover:text-secondary" variant={"stroke"} />
                 </Link>
                 <Link href="/settings" className="rounded-full  p-3 hover:bg-gray-100 transition-colors duration-300">
-                    <Settings02Icon size={24} className="text-primary" variant={"stroke"} />
+                    <Settings02Icon size={24} className="text-primary hover:text-secondary" variant={"stroke"} />
                 </Link>
             </div>
         </div>

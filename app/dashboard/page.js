@@ -1,6 +1,7 @@
 import React from 'react'
 import ActionBtn from '../components/reusable UI components/ActionBtn'
 import { PlusSignIcon } from "hugeicons-react";
+import InfoCard from '../components/reusable UI components/InfoCard';
 
 
 const page = () => {
@@ -10,6 +11,7 @@ const page = () => {
               <h2 className="text-xl">Dashboard</h2>
               <ActionBtn text="Add Invoice" icon={<PlusSignIcon size={20} color={"#fff"} variant={"stroke"} />} />
           </div>
+          <InfoCard />
       </section>
   );
 }
