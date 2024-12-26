@@ -11,7 +11,11 @@ const page = () => {
               <h2 className="text-xl">Dashboard</h2>
               <ActionBtn text="Add Invoice" icon={<PlusSignIcon size={20} color={"#fff"} variant={"stroke"} />} />
           </div>
-          <InfoCard />
+          <div className='grid grid-cols-3 grid-rows-3 gap-5 bg-red-300 w-full h-full mt-5'>
+              <InfoCard classes={'h-full'}/>
+              <InfoCard classes={'h-full'}/>
+              <InfoCard classes={'h-full'}/>
+          </div>
       </section>
   );
 }

@@ -15,21 +15,27 @@ const Header = () => {
             </div>
             <div className="flex items-center justify-end w-1/2">
                 <div className="flex items-center justify-end w-1/2">
-                    <button className="w-10 h-10 mx-1 rounded-full flex items-center justify-center bg-gray-100 transition-colors duration-300">
-                        <MessageTranslateIcon size={24} className="text-primary hover:text-secondary" variant={"stroke"} />
-                    </button>
+                    <div className="flex items-center justify-center min-h-screen">
+                        <button className="w-10 h-10 mx-1 rounded-full flex items-center justify-center bg-gray-100 transition-colors duration-300">
+                            <MessageTranslateIcon size={24} className="text-primary hover:text-secondary" variant={"stroke"} />
+                        </button>
+                    </div>
                     <button className="w-10 h-10 mx-1 rounded-full flex items-center justify-center bg-gray-100 transition-colors duration-300">
                         <Toggle
                             initIcon={<Sun02Icon size={24} className="text-primary hover:text-secondary" variant={"stroke"} />}
                             secIcon={<Moon02Icon size={24} className="text-primary hover:text-secondary" variant={"stroke"} />}
                         />
                     </button>
-                    <button className="w-10 h-10 mx-1 rounded-full flex items-center justify-center bg-gray-100 transition-colors duration-300">
-                        <Notification03Icon size={24} className="text-primary hover:text-secondary" variant={"stroke"} />
-                    </button>
-                    <button className="w-12 h-12 ml-4 bg-secondary rounded-full overflow-hidden flex items-center justify-center ring-2 ring-secondary">
-                        <Image src={"/images/avatar.jpg"} alt="avatar" width={52} height={52} className="object-cover"></Image>
-                    </button>
+                    <div className="flex items-center justify-center min-h-screen">
+                        <button className="w-10 h-10 mx-1 rounded-full flex items-center justify-center bg-gray-100 transition-colors duration-300">
+                            <Notification03Icon size={24} className="text-primary hover:text-secondary" variant={"stroke"} />
+                        </button>
+                    </div>
+                    <div className="flex items-center justify-center min-h-screen">
+                        <button className="w-12 h-12 ml-4 bg-secondary rounded-full overflow-hidden flex items-center justify-center ring-2 ring-secondary">
+                            <Image src={"/images/avatar.jpg"} alt="avatar" width={52} height={52} className="object-cover"></Image>
+                        </button>
+                    </div>
                 </div>
             </div>
         </header>
