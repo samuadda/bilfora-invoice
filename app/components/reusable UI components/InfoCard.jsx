@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { Invoice01Icon } from "hugeicons-react";
+import Chart  from "./Chart";
 
 const InfoCard = ({ classes, icon }) => {
     return (
@@ -11,9 +12,9 @@ const InfoCard = ({ classes, icon }) => {
                     <Invoice01Icon size={24} className="text-white" variant={"stroke"} />
                 </Link>
             </div>
-            <div className="flex items-center justify-between mt-5">
+            <div className="flex items-center justify-between mt-5 gap-4">
                 <p className="text-2xl text-primary font-semibold">219</p>
-                <p className="text-sm text-gray-400 bg-slate-500 flex-1">CHART</p>
+                <div className="flex-1"><Chart/></div>
             </div>
         </div>
     );
