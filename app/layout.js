@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en">
-            <body className={`${poppins.className} flex scrollbar-hide`}>
+            <body className={`${poppins.className} flex overflow-auto scrollbar-hide`}>
                 <SideBar />
                 <div className="flex flex-col flex-1 min-h-screen">
                     <Header />
