@@ -36,7 +36,7 @@ const SideBar = () => {
     ];
 
     return (
-        <div className="min-h-screen w-64 bg-white flex flex-col border-r border-gray-200 ">
+        <div className="h-screen w-64 bg-white flex flex-col border-r border-gray-200 ">
             <div className="p-5">
                 <Link href="/">
                     <h1 id="logo" className="font-moonet text-primary text-6xl">

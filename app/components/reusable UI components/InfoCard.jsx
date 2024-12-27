@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import Chart  from "./Chart";
 
-const InfoCard = ({ title, icon, number, linkPath, iconBg}) => {
+const InfoCard = ({ title, icon, number, linkPath, iconBg, chartProps}) => {
     return (
         <div className="bg-white rounded-md shadow-md p-5">
             <div className="flex items-center justify-between h-1/3 gap-3">
@@ -13,8 +13,8 @@ const InfoCard = ({ title, icon, number, linkPath, iconBg}) => {
             </div>
             <div className="flex items-center justify-between mt-5 gap-4">
                 <p className="text-2xl text-primary font-semibold">{number}</p>
-                <div className="flex-1">
-                    <Chart />
+                <div className="w-full h-32 overflow-hidden-1">
+                    <Chart {...chartProps} />
                 </div>
             </div>
         </div>
